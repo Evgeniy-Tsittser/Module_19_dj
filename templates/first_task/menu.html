@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 38px;
+        }
+
+        main {
+            padding: 50px;
+            min-height: calc(100vh - 150px);
+        }
+
+        img {
+            position: absolute;
+            top: 140px;
+            left: 900px;
+            width: 500px;
+            height: auto;
+        }
+
+        h1 {
+            color: aqua;
+        }
+
+        footer {
+            text-align: center;
+            background-color: lightgray;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        {% block menu %}
+        <nav>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/">Главная</a></li>
+                <li><a href="http://127.0.0.1:8000/shop/">Магазин</a></li>
+                <li><a href="http://127.0.0.1:8000/cart/">Корзина</a></li>
+            </ul>
+        </nav>
+        {% endblock %}
+    </header>
+    <main>
+        {% block pagename %}{% endblock %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <img src="https://40.img.avito.st/image/1/1.Cx152LasNZHN-7F2wNcuYWfRpPbP.IST1UoN4VFwEj8NUW8CDvWGSFYNVuS65r9K1X-fUafo" alt="Удача!">
+
+    <footer>
+        <p>© 2024 Любителям компьютерных игр.</p>
+    </footer>
+</body>
+</html>

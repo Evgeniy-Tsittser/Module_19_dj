@@ -1,0 +1,24 @@
+{% extends 'first_task/menu.html' %}
+
+{% block title %}Магазин{% endblock %}
+
+{% block pagename %}
+<h1>Магазин</h1>
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for product in products %}
+    <li class="product">
+        {{ product.title }}: {{ product.description }}. Стоимость: {{ product.cost }}
+        <button class="button">Купить</button>
+    </li>
+    {% endfor %}
+</ul>
+<a href="http://127.0.0.1:8000/"><button>На главную</button></a>
+<style>
+    .product .button {
+        margin-left: 100px;
+    }
+</style>
+{% endblock %}
