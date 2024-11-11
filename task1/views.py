@@ -44,7 +44,6 @@ def sign_up_by_django(request):
                     email=email,
                     balance=balance
                 )
-                #return redirect("hello_message", username=username)
                 url = reverse('hello_message', args=[username])
                 return redirect(url)
         else:
